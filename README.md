@@ -119,3 +119,19 @@ python pipeline.py run-pipeline \
     --cv 5 \
     --n-trials 75
 ```
+
+## Referências
+
+### Técnicas de Classificação e Regressão e Mineração de Dados
+1. Witten, I. H., Frank, E., Hall, M. A., & Pal, C. J. (2016). *Data Mining: Practical Machine Learning Tools and Techniques* (4th Edition). Morgan Kaufmann.  
+2. Han, J., Kamber, M., & Pei, J. (2011). *Data Mining: Concepts and Techniques* (3rd Edition). Morgan Kaufmann.  
+3. Russell, S., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th Edition). Pearson.  
+4. Géron, A. (2022). *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* (3rd Edition). O’Reilly Media.
+
+### Otimização de Hiperparâmetros (Optuna)
+5. Akiba, T., Sano, S., Yanase, T., Ohta, T., & Koyama, M. (2019). *Optuna: A Next-generation Hyperparameter Optimization Framework*. Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD’19).  
+6. [Optuna Official Documentation](https://optuna.org/)
+
+### MLflow
+7. Zaharia, M., Chen, A., Davidson, A., Ghodsi, A., Hong, M., Konwinski, A., … & Stoica, I. (2018). *Accelerating the Machine Learning Lifecycle with MLflow*. IEEE Data Engineering Bulletin.  
+8. [MLflow Official Documentation](https://mlflow.org/)
