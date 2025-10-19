@@ -69,10 +69,10 @@ Este projeto fornece um pipeline para **treinamento, otimização de hiperparâm
 
 ## Melhorias neste Módulo
 
-Este módulo apresenta diversas melhorias para gerenciar fluxos de trabalho de machine learning:
+Este módulo apresenta diversas melhorias para gerenciar fluxos de trabalho:
 
 - **Trainer (`trainer.py`)**: Pipeline de treino simplificado com cross-validation, logging automático de parâmetros, métricas e modelos.  
-- **Otimização de Hiperparâmetros (`hyperparam_optimization.py`)**: Seleção otimizada de modelos usando Optuna, com saída de terminal oculta e exibição clara dos melhores parâmetros.  
+- **Otimização de Hiperparâmetros (`hyperparam_optimization.py`)**: Seleção otimizada de modelos usando Optuna.  
 - **Utilitários MLflow (`mlflow_utils.py`)**: Funções simplificadas para iniciar experimentos, registrar hiperparâmetros, métricas e modelos treinados.  
 - **Pipeline (`pipeline.py`)**: Execução unificada de pré-processamento, treino, otimização de hiperparâmetros e avaliação em um único comando.  
 
