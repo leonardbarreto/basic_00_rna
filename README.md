@@ -85,10 +85,12 @@ python pipeline.py run-pipeline [OPTIONS]
 ## Exemplos de execução
 ### Classificação
 - Simples
+
 ´´´bash
 python pipeline.py --dataset-name iris
 ´´´ 
 - Completo
+
 ´´´bash
 python pipeline.py \
     --dataset-name iris \
@@ -101,12 +103,13 @@ python pipeline.py \
 
 ### Regressão
 - Simples
+
 ´´´bash
 python pipeline.py --dataset-name boston --task regression
-
 ´´´
 
 - Completo
+
 ´´´bash
 python pipeline.py run-pipeline \
     --dataset-name boston \
