@@ -1,0 +1,14 @@
+name: advanced_00_classifiy_regression_hyperOptimization_MLflow_ccds
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.13
+  - pip
+  - typer
+  - loguru
+  - tqdm
+  - ruff
+  - pip:
+    - python-dotenv
+    - mkdocs
+    - -e .
