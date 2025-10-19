@@ -54,12 +54,12 @@ A short description of the project.
     │
     ├── modeling                
     │   ├── __init__.py 
-    │   ├── predict.py               <- Code to run model inference with trained models          
+    │   ├── predict.py              <- Code to run model inference with trained models          
     │   ├──train.py                 <- High-level script to train models, handle datasets, and orchestrate the training pipeline
     │   ├──trainer.py               <- Functions to train models, perform cross-validation, and log parameters, metrics, and models to MLflow
     │   └── hyperparam_optimization.py <- Functions to perform hyperparameter optimization using Optuna
     │
-    ├── pipeline.py        <- High-level pipeline script to run the full workflow: data preprocessing, model training, hyperparameter optimization, evaluation, and MLflow logging
+    ├── pipeline.py             <- High-level pipeline script to run the full workflow: data preprocessing, model training, hyperparameter optimization, evaluation, and MLflow logging
     └── plots.py                <- Code to create visualizations
 ```
 
