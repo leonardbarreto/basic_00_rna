@@ -39,7 +39,7 @@ A short description of the project.
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── ai_workflow_engine   <- Source code for use in this project.
+└── clustering_workflow_engine   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes ai_workflow_engine a Python module
     │
@@ -65,14 +65,14 @@ A short description of the project.
 
 # Pipeline de Treinamento de Modelos com MLflow
 
-Este projeto fornece um pipeline para **treinamento, otimização de hiperparâmetros e avaliação de modelos de classificação e regressão**, utilizando `scikit-learn`, `Optuna` e `MLflow`.
+Este projeto fornece um pipeline para **treinamento, otimização de hiperparâmetros e avaliação de modelos de clustering**, utilizando `scikit-learn`, `Optuna` e `MLflow`.
 
 ## Melhorias neste Módulo
 
 Este módulo apresenta diversas melhorias para gerenciar fluxos de trabalho:
 
 - **Trainer (`trainer.py`)**: Pipeline de treino simplificado com cross-validation, logging automático de parâmetros, métricas e modelos.  
-- **Otimização de Hiperparâmetros (`hyperparam_optimization.py`)**: Seleção otimizada de modelos usando Optuna.  
+- **Otimização de Hiperparâmetros (`hyperparam_optimization.py`)**: Seleção otimizada de modelos para clustering usando Optuna.  
 - **Utilitários MLflow (`mlflow_utils.py`)**: Funções simplificadas para iniciar experimentos, registrar hiperparâmetros, métricas e modelos treinados.  
 - **Pipeline (`pipeline.py`)**: Execução unificada de pré-processamento, treino, otimização de hiperparâmetros e avaliação em um único comando.  
 
@@ -88,58 +88,26 @@ python pipeline.py run-pipeline [OPTIONS]
 ```
 
 ## Opções principais
-| Parâmetro        | Tipo  | Padrão           | Descrição                                         |
-| ---------------- | ----- | ---------------- | ------------------------------------------------- |
-| `--dataset-name` | str   | "iris"           | Nome do dataset CSV processado                    |
-| `--model-type`   | str   | "random_forest"  | Tipo de modelo (ex.: random_forest)               |
-| `--task`         | str   | "classification" | Tarefa: classification ou regression              |
-| `--test-size`    | float | 0.2              | Fração de dados para teste                        |
-| `--cv`           | int   | 3                | Número de folds para cross-validation             |
-| `--n-trials`     | int   | 50               | Número de trials na otimização de hiperparâmetros |
+| Parâmetro        | Tipo | Padrão       | Descrição                                              |
+| ---------------- | ---- | ------------ | ------------------------------------------------------ |
+| `--dataset-name` | str  | "iris"       | Nome do dataset CSV processado em `PROCESSED_DATA_DIR` |
+| `--model-type`   | str  | "kmeans"     | Tipo de modelo: `"kmeans"` ou `"dbscan"`               |
+| `--task`         | str  | "clustering" | Tarefa do pipeline (atualmente apenas `"clustering"`)  |
+| `--n-trials`     | int  | 20           | Número de trials na otimização de hiperparâmetros      |
 
 > ⚠️ Importante: Use kebab-case no terminal (--dataset-name) e não snake_case (--dataset_name).
 
 ## Exemplos de execução
-### Classificação
-- Simples
-
-```bash
-python pipeline.py --dataset-name iris
-```
-- Completo
-
-```bash
-python pipeline.py \
-    --dataset-name iris \
-    --model-type random_forest \
-    --task classification \
-    --test-size 0.3 \
-    --cv 5 \
-    --n-trials 100
-```
-
-### Regressão
-- Simples
-
-```bash
-python pipeline.py --dataset-name boston --task regression
-```
-
-- Completo
-
-```bash
-python pipeline.py run-pipeline \
-    --dataset-name boston \
-    --model-type random_forest \
-    --task regression \
-    --test-size 0.25 \
-    --cv 5 \
-    --n-trials 75
-```
+| Dataset | Algoritmo | Comando                                                                   |
+| ------- | --------- | ------------------------------------------------------------------------- |
+| Iris    | KMeans    | `python pipeline.py --dataset-name iris --model-type kmeans` |
+| Iris    | DBSCAN    | `python pipeline.py --dataset-name iris --model-type dbscan` |
+| Wine    | KMeans    | `python pipeline.py --dataset-name wine --model-type kmeans` |
+| Wine    | DBSCAN    | `python pipeline.py --dataset-name wine --model-type dbscan` |
 
 ## Referências
 
-### Técnicas de Classificação e Regressão e Mineração de Dados
+### Técnicas de Clustering
 1. Witten, I. H., Frank, E., Hall, M. A., & Pal, C. J. (2016). *Data Mining: Practical Machine Learning Tools and Techniques* (4th Edition). Morgan Kaufmann.  
 2. Han, J., Kamber, M., & Pei, J. (2011). *Data Mining: Concepts and Techniques* (3rd Edition). Morgan Kaufmann.  
 3. Russell, S., & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th Edition). Pearson.  
