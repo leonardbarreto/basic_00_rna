@@ -67,6 +67,17 @@ A short description of the project.
 
 Este projeto fornece um pipeline para **treinamento, otimização de hiperparâmetros e avaliação de modelos de classificação e regressão**, utilizando `scikit-learn`, `Optuna` e `MLflow`.
 
+## Melhorias neste Módulo
+
+Este módulo apresenta diversas melhorias para gerenciar fluxos de trabalho de machine learning:
+
+- **Trainer (`trainer.py`)**: Pipeline de treino simplificado com cross-validation, logging automático de parâmetros, métricas e modelos.  
+- **Otimização de Hiperparâmetros (`hyperparam_optimization.py`)**: Seleção otimizada de modelos usando Optuna, com saída de terminal oculta e exibição clara dos melhores parâmetros.  
+- **Utilitários MLflow (`mlflow_utils.py`)**: Funções simplificadas para iniciar experimentos, registrar hiperparâmetros, métricas e modelos treinados.  
+- **Pipeline (`pipeline.py`)**: Execução unificada de pré-processamento, treino, otimização de hiperparâmetros e avaliação em um único comando.  
+
+Essas melhorias tornam o treino, avaliação e rastreamento de experimentos mais reprodutíveis, automatizados e fáceis de usar.
+
 O pipeline está estruturado para ser executado via terminal, usando Typer, com todos os parâmetros em **kebab-case**.
 
 ---
