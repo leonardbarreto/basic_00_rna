@@ -47,6 +47,9 @@ A short description of the project.
     │
     ├── dataset.py              <- Scripts to download or generate data
     │
+    ├── experiments                
+    │   └── mlflow_utils.py     <- Utilities for MLflow integration: functions to start experiments, log parameters, metrics, and trained models
+    │
     ├── features.py             <- Code to create features for modeling
     │
     ├── modeling                
@@ -56,6 +59,7 @@ A short description of the project.
     │   ├──trainer.py               <- Functions to train models, perform cross-validation, and log parameters, metrics, and models to MLflow
     │   └── hyperparam_optimization.py <- Functions to perform hyperparameter optimization using Optuna
     │
+    ├── pipeline.py        <- High-level pipeline script to run the full workflow: data preprocessing, model training, hyperparameter optimization, evaluation, and MLflow logging
     └── plots.py                <- Code to create visualizations
 ```
 
