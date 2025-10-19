@@ -86,12 +86,12 @@ python pipeline.py run-pipeline [OPTIONS]
 ### Classificação
 - Simples
 
-´´´bash
+```bash
 python pipeline.py --dataset-name iris
-´´´ 
+```
 - Completo
 
-´´´bash
+```bash
 python pipeline.py \
     --dataset-name iris \
     --model-type random_forest \
@@ -99,18 +99,18 @@ python pipeline.py \
     --test-size 0.3 \
     --cv 5 \
     --n-trials 100
-´´´
+```
 
 ### Regressão
 - Simples
 
-´´´bash
+```bash
 python pipeline.py --dataset-name boston --task regression
-´´´
+```
 
 - Completo
 
-´´´bash
+```bash
 python pipeline.py run-pipeline \
     --dataset-name boston \
     --model-type random_forest \
@@ -118,5 +118,4 @@ python pipeline.py run-pipeline \
     --test-size 0.25 \
     --cv 5 \
     --n-trials 75
-´´´
-
+```
