@@ -1,21 +1,26 @@
 import pandas as pd
+import typer
 from loguru import logger
 from tqdm import tqdm
-import typer
+
 from rna_workflow_engine.config import PROCESSED_DATA_DIR
 
 app = typer.Typer()
 
 # ---- Dataset loaders ----
+
+
 def _load_iris():
     from sklearn.datasets import load_iris
     data = load_iris(as_frame=True)
     return data.data, data.target
 
+
 def _load_diabetes():
     from sklearn.datasets import load_diabetes
     data = load_diabetes(as_frame=True)
     return data.data, data.target
+
 
 def _load_titanic():
     url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
@@ -25,10 +30,12 @@ def _load_titanic():
     y = df["Survived"]
     return X, y
 
+
 def _load_wine():
     from sklearn.datasets import load_wine
     data = load_wine(as_frame=True)
     return data.data, data.target
+
 
 DATASET_MAP = {
     "iris": _load_iris,
@@ -36,6 +43,7 @@ DATASET_MAP = {
     "titanic": _load_titanic,
     "wine": _load_wine,
 }
+
 
 def fetch_dataset(name: str):
     name = name.lower()
@@ -45,6 +53,7 @@ def fetch_dataset(name: str):
     logger.info(f"Dataset '{name}' carregado com sucesso")
     return X, y
 
+
 def save_dataset(X: pd.DataFrame, y: pd.Series, dataset_name: str):
     output_path = PROCESSED_DATA_DIR / f"{dataset_name}_processed.csv"
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -52,6 +61,7 @@ def save_dataset(X: pd.DataFrame, y: pd.Series, dataset_name: str):
     df_to_save.to_csv(output_path, index=False)
     logger.info(f"Dataset '{dataset_name}' salvo em {output_path}")
     return output_path
+
 
 @app.command()
 def main(dataset_name: str = "iris"):
@@ -64,6 +74,7 @@ def main(dataset_name: str = "iris"):
 
     save_dataset(X, y, dataset_name)
     logger.success(f"Dataset '{dataset_name}' processado e salvo com sucesso.")
+
 
 if __name__ == "__main__":
     app()
