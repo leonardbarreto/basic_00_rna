@@ -1,4 +1,4 @@
-# advanced_00_classifiy_regression_hyperOptimization_MLflow_ccds
+# basic_00_RNA_hyperOptimization_MLflow_ccds
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
@@ -65,18 +65,9 @@ A short description of the project.
 
 # Pipeline de Treinamento de Modelos com MLflow
 
-Este projeto fornece um pipeline para **treinamento, otimização de hiperparâmetros e avaliação de modelos de clustering**, utilizando `scikit-learn`, `Optuna` e `MLflow`.
+Projeto básico de Rede Neural Artificial (RNA) desenvolvido em **PyTorch** para fins de aprendizado e experimentação com pipelines de *deep learning*.  
+O objetivo é construir, treinar e avaliar uma rede simples utilizando dados sintéticos com suporte a *logging* e *monitoramento* estruturado, utilizando  `Optuna` e `MLflow`.
 
-## Melhorias neste Módulo
-
-Este módulo apresenta diversas melhorias para gerenciar fluxos de trabalho:
-
-- **Trainer (`trainer.py`)**: Pipeline de treino simplificado com cross-validation, logging automático de parâmetros, métricas e modelos.  
-- **Otimização de Hiperparâmetros (`hyperparam_optimization.py`)**: Seleção otimizada de modelos para clustering usando Optuna.  
-- **Utilitários MLflow (`mlflow_utils.py`)**: Funções simplificadas para iniciar experimentos, registrar hiperparâmetros, métricas e modelos treinados.  
-- **Pipeline (`pipeline.py`)**: Execução unificada de pré-processamento, treino, otimização de hiperparâmetros e avaliação em um único comando.  
-
-Essas melhorias tornam o treino, avaliação e rastreamento de experimentos mais reprodutíveis, automatizados e fáceis de usar.
 
 O pipeline está estruturado para ser executado via terminal, usando Typer, com todos os parâmetros em **kebab-case**.
 
@@ -84,7 +75,7 @@ O pipeline está estruturado para ser executado via terminal, usando Typer, com 
 # Executando o pipeline
 ## Comando base
 ```bash
-python pipeline.py run-pipeline [OPTIONS]
+python pipeline.py [OPTIONS]
 ```
 
 ## Opções principais
