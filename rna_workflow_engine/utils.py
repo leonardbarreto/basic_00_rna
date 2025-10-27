@@ -1,6 +1,7 @@
 # rna_workflow_engine/utils.py
 import torch
 
+
 def get_device(verbose: bool = True):
     """
     Retorna o dispositivo de execução disponível para PyTorch.

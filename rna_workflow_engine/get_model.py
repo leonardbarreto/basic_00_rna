@@ -16,7 +16,7 @@ class MLP(nn.Module):
     def forward(self, x):
         return self.net(x)
 
-def get_model(model_type: str, input_dim=None, output_dim=None, task="regression"):
+def get_model(model_type: str, input_dim=None, output_dim=None, task="classification"):
     """
     Retorna a classe do modelo solicitada.
     Atualmente só MLP está implementado.

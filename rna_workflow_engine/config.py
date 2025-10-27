@@ -14,6 +14,7 @@ PROCESSED_DATA_DIR = PROJ_ROOT / "data/processed"
 # --- Diretórios de modelos e relatórios ---
 MODELS_DIR = PROJ_ROOT / "models"
 REPORTS_DIR = PROJ_ROOT / "reports"
+FIGURES_DIR = REPORTS_DIR / "figures"
 
 # --- Configuração segura do Loguru ---
 # Remove todos os handlers existentes para evitar erros

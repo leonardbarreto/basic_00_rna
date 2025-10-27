@@ -1,0 +1,13 @@
+mlflow==3.5.0
+cloudpickle==3.1.1
+loguru==0.7.3
+numpy==1.26.4
+opt-einsum==3.4.0
+pandas==2.3.3
+psutil==7.1.0
+pyarrow==15.0.2
+scikit-learn==1.7.2
+scipy==1.16.2
+torch==2.9.0
+tqdm==4.67.1
+typer==0.19.2

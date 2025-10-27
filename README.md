@@ -39,7 +39,7 @@ A short description of the project.
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── clustering_workflow_engine   <- Source code for use in this project.
+└── rna_workflow_engine   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes ai_workflow_engine a Python module
     │

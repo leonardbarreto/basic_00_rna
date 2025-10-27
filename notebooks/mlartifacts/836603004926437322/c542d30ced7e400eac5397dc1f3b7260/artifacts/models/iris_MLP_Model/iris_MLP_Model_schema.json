@@ -1,0 +1,11 @@
+{
+  "model_name": "iris_MLP_Model",
+  "model_type": "pytorch",
+  "timestamp": "2025-10-27T13:43:42.179110",
+  "mlflow_run_id": "c542d30ced7e400eac5397dc1f3b7260",
+  "framework": "torch",
+  "class_name": "MLP",
+  "parameters_count": 4675,
+  "input_schema": null,
+  "output_schema": null
+}
