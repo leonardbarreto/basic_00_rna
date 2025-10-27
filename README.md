@@ -79,22 +79,27 @@ python pipeline.py [OPTIONS]
 ```
 
 ## Opções principais
-| Parâmetro        | Tipo | Padrão       | Descrição                                              |
-| ---------------- | ---- | ------------ | ------------------------------------------------------ |
-| `--dataset-name` | str  | "iris"       | Nome do dataset CSV processado em `PROCESSED_DATA_DIR` |
-| `--model-type`   | str  | "kmeans"     | Tipo de modelo: `"kmeans"` ou `"dbscan"`               |
-| `--task`         | str  | "clustering" | Tarefa do pipeline (atualmente apenas `"clustering"`)  |
-| `--n-trials`     | int  | 20           | Número de trials na otimização de hiperparâmetros      |
+| Parâmetro           | Tipo    | Padrão              | Descrição                                                                              |
+| ------------------- | ------- | ------------------- | -------------------------------------------------------------------------------------- |
+| `--dataset-name`    | `str`   | `"default_dataset"` | Nome do dataset localizado em `PROCESSED_DATA_DIR`                                     |
+| `--experiment-name` | `str`   | `"MLP_classification"` | Nome do experimento no MLflow                                                          |
+| `--run-name`        | `str`   | `"default_run"`     | Nome do *run* para rastreamento no MLflow                                              |
+| `--epochs`          | `int`   | `50`                | Número de épocas de treinamento do modelo PyTorch                                      |
+| `--batch-size`      | `int`   | `32`                | Tamanho do *batch* utilizado no treinamento                                            |
+| `--learning-rate`   | `float` | `0.001`             | Taxa de aprendizado para o otimizador                                                  |
+| `--model-name`      | `str`   | `"rna_model.pkl"`   | Nome do arquivo do modelo serializado e logado no MLflow                               |
+| `--use-mlflow`      | `bool`  | `True`              | Ativa o rastreamento automático no MLflow (parâmetros, métricas e figuras)             |
+| `--log-figures`     | `bool`  | `True`              | Salva e loga os gráficos de *loss curve* e *confusion matrix* como artefatos no MLflow |
 
 > ⚠️ Importante: Use kebab-case no terminal (--dataset-name) e não snake_case (--dataset_name).
 
 ## Exemplos de execução
-| Dataset | Algoritmo | Comando                                                                   |
-| ------- | --------- | ------------------------------------------------------------------------- |
-| Iris    | KMeans    | `python pipeline.py --dataset-name iris --model-type kmeans` |
-| Iris    | DBSCAN    | `python pipeline.py --dataset-name iris --model-type dbscan` |
-| Wine    | KMeans    | `python pipeline.py --dataset-name wine --model-type kmeans` |
-| Wine    | DBSCAN    | `python pipeline.py --dataset-name wine --model-type dbscan` |
+| Dataset  | Descrição                                                                         | Comando                                                                                                        |
+| -------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Iris     | Executa o pipeline completo com otimização de hiperparâmetros e logging no MLflow | `python pipeline.py --dataset-name iris --experiment-name MLP_Classification --optimize-hyperparams-flag True` |
+| Wine     | Executa o pipeline sem otimização de hiperparâmetros                              | `python pipeline.py --dataset-name wine --optimize-hyperparams-flag False`                                     |
+| Titanic  | Define nome personalizado para o *run*                                            | `python pipeline.py --dataset-name titanic --run-name "titanic_run_01"`                                        |
+| Diabetes | Cria experimento personalizado no MLflow                                          | `python pipeline.py --dataset-name diabetes --experiment-name "MLP_Diabetes_Study"`                            |
 
 ## Referências
 
