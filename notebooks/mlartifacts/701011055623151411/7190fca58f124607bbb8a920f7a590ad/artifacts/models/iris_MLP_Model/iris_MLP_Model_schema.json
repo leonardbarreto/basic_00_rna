@@ -1,0 +1,19 @@
+{
+  "model_name": "iris_MLP_Model",
+  "model_type": "pytorch",
+  "timestamp": "2025-10-27T23:11:25.896279",
+  "mlflow_run_id": "7190fca58f124607bbb8a920f7a590ad",
+  "framework": "torch",
+  "class_name": "MLP",
+  "parameters_count": 4675,
+  "signature_inferred": true,
+  "has_input_example": true,
+  "dataset": "iris",
+  "task": "classification",
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  }
+}

@@ -17,8 +17,10 @@ from rna_workflow_engine.modeling.evaluator import evaluate_model
 from rna_workflow_engine.modeling.hyperparam_optimization import \
     optimize_hyperparams
 from rna_workflow_engine.modeling.train import train_model
-from rna_workflow_engine.plots import (get_classification_preds,
-                                       plot_confusion_matrix, plot_loss_curve)
+from rna_workflow_engine.plots import (plot_confusion_matrix, plot_loss_curve)
+
+from rna_workflow_engine.dataset import load_dataset_split
+
 
 app = typer.Typer()
 
@@ -30,22 +32,15 @@ def run_pipeline(
     ),
     # dataset_name: str = typer.Option(..., help="Nome do dataset"),
     experiment_name: str = typer.Option(
-        "MLP", help="Nome do experimento MLflow"),
+        "MLP_Classification", help="Nome do experimento MLflow"),
     run_name: str = typer.Option(None, help="Nome do run MLflow"),
     optimize_hyperparams_flag: bool = typer.Option(
         True, help="Executar otimização de hiperparâmetros")
 ):
     logger.info(f"Iniciando pipeline para dataset '{dataset_name}'")
 
-    # 1️⃣ Carrega dataset
-    X, y = fetch_dataset(dataset_name)
-    input_dim = X.shape[1]
-    output_dim = len(y.unique()) if len(y.unique()) > 2 else 1
-
-    # Split treino/val
-    X_train, X_val, y_train, y_val = train_test_split(
-        X, y, test_size=0.2, stratify=y, random_state=42
-    )
+    # 1️⃣ Carrega dataset já dividido
+    X_train, X_val, y_train, y_val, input_dim, output_dim = load_dataset_split(dataset_name)
 
     # 2️⃣ Inicia run MLflow
     run = start_run(experiment_name=experiment_name, run_name=run_name)
@@ -75,7 +70,7 @@ def run_pipeline(
             hidden2=best_params["hidden2"],
             dropout=best_params["dropout"],
             lr=best_params["lr"],
-            epochs=50,
+            epochs=50, # Poderia chamar EarlyStopping
             batch_size=32,
             device="cpu"
         )

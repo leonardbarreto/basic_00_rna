@@ -1,0 +1,18 @@
+{
+  "dataframe_split": {
+    "columns": [
+      "Age",
+      "Fare",
+      "Pclass",
+      "Sex"
+    ],
+    "data": [
+      [
+        42.0,
+        13.0,
+        2,
+        0
+      ]
+    ]
+  }
+}

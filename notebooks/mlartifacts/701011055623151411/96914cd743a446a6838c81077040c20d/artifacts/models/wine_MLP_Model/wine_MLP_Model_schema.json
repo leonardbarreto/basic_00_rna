@@ -1,0 +1,19 @@
+{
+  "model_name": "wine_MLP_Model",
+  "model_type": "pytorch",
+  "timestamp": "2025-10-27T22:06:40.046516",
+  "mlflow_run_id": "96914cd743a446a6838c81077040c20d",
+  "framework": "torch",
+  "class_name": "MLP",
+  "parameters_count": 5251,
+  "signature_inferred": true,
+  "has_input_example": true,
+  "dataset": "wine",
+  "task": "classification",
+  "metrics": {
+    "accuracy": 0.6944444444444444,
+    "precision": 0.52,
+    "recall": 0.6388888888888888,
+    "f1_score": 0.5581568190263843
+  }
+}

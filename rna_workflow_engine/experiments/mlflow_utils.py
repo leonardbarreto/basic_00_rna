@@ -17,7 +17,7 @@ from mlflow.models import infer_signature
 from rna_workflow_engine.config import MODELS_DIR
 
 
-def start_run(experiment_name: str = "Default", run_name: str = None):
+def start_run(experiment_name: str = "MLP_Classification", run_name: str = None):
     mlflow.set_experiment(experiment_name)
     run = mlflow.start_run(run_name=run_name)
     logger.info(f"MLflow run started: {run.info.run_id}")

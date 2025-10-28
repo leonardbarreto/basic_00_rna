@@ -1,15 +1,20 @@
-name: advanced_00_classifiy_regression_hyperOptimization_MLflow_ccds
+name: py3-11-13
 channels:
-  - conda-forge
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - https://repo.anaconda.com/pkgs/msys2
 dependencies:
+  - ipykernel
+  - mlflow=2.13.0
+  - numpy=1.26.4
+  - pandas=2.2.2
+  - pip==25.2
   - python=3.11.13
-  - pip
-  - typer
-  - loguru
-  - tqdm
-  - ruff
+  - scikit-learn=1.7.2
+  - loguru==0.7.3
+  - prophet==1.2.0
+  - mlflow==2.18.0
   - pip:
-    - python-dotenv
-    - mkdocs
-    - torch
-    - -e .
+      - -e .
+prefix: C:\Users\leona\anaconda3\envs\py3-11-13

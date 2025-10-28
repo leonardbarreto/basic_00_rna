@@ -66,7 +66,7 @@ A short description of the project.
 # Pipeline de Treinamento de Modelos com MLflow
 
 Projeto básico de Rede Neural Artificial (RNA) desenvolvido em **PyTorch** para fins de aprendizado e experimentação com pipelines de *deep learning*.  
-O objetivo é construir, treinar e avaliar uma rede simples utilizando dados sintéticos com suporte a *logging* e *monitoramento* estruturado, utilizando  `Optuna` e `MLflow`.
+O objetivo é construir, treinar e avaliar uma rede simples (com duas camadas ocultas) utilizando dados sintéticos com suporte a *logging* e *monitoramento* estruturado, utilizando  `Optuna` e `MLflow`.
 
 
 O pipeline está estruturado para ser executado via terminal, usando Typer, com todos os parâmetros em **kebab-case**.
