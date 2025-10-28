@@ -192,3 +192,8 @@ mlruns/
 
 # Ignorar todos os arquivos dentro das subpastas 'data'
 data/**
+
+# Ignorar todos os arquivos dentro das subastas 'reports','models'
+reports/**
+models/**
+
